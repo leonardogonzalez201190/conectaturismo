@@ -1,0 +1,497 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-cnt-primary: var(--cnt-primary);
+  --shadow-cnt-header: var(--cnt-header-shadow);
+  --color-cnt-link: var(--cnt-link);
+  --color-cnt-link-hover: var(--cnt-link-hover);
+  --color-cnt-overlay: var(--cnt-overlay);
+  --color-cnt-text-primary: var(--cnt-text-primary);
+  --color-cnt-text-secondary: var(--cnt-text-secondary);
+  /* Defaults */
+  --color-background: var(--background);
+  --background-primary: var(--background-primary);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --cnt-primary: #0a293b;
+  --cnt-header-shadow: 0 2px 3px 0px #061923;
+  --cnt-link: #38b5e6;
+  --cnt-link-hover: #fe8306;
+  --cnt-overlay: #0A293A;
+  --cnt-text-primary: #6ec1e4;
+  --cnt-text-secondary: #0a293a;
+  /* Defaults */
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --cnt-primary: oklch(0.72 0.11 178);
+  /* Defaults */
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutOpacity {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Down Animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-in forwards;
+}
+
+.fade-in-down {
+  animation: fadeInDown 0.6s ease-in forwards;
+}
+
+#carusel-img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.fade-in {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-timing-function: ease-in;
+  animation-duration: .5s;
+}
+
+.fade-out {
+  opacity: 0;
+  animation-name: fadeOutOpacity;
+  animation-timing-function: ease-in;
+  animation-duration: .5s;
+}
+
+.fade-in-right {
+  opacity: 1;
+  animation-name: fadeInRight;
+  animation-timing-function: ease-in;
+  animation-duration: .5s;
+}
+
+.elementor-heading-title span {
+  font: 300 1.05em / .9em Titillium Web, sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.font-tilium {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.section-md-background {
+  background-color: var(--cnt-primary);
+  background-image: url(https://www.conectaturismo.com/wp-content/uploads/2021/09/bg-stripe-light.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.elementor-shape-fill {
+  fill: #fff;
+  transform: rotateY(0deg);
+  transform-origin: center;
+}
+
+
+@keyframes elementor-animation-wobble-vertical {
+  16.65% {
+    transform: translateY(8px)
+  }
+
+  33.3% {
+    transform: translateY(-6px)
+  }
+
+  49.95% {
+    transform: translateY(4px)
+  }
+
+  66.6% {
+    transform: translateY(-2px)
+  }
+
+  83.25% {
+    transform: translateY(1px)
+  }
+
+  100% {
+    transform: translateY(0)
+  }
+}
+
+.elementor-animation-wobble-vertical:active,
+.elementor-animation-wobble-vertical:focus,
+.elementor-animation-wobble-vertical:hover {
+  animation-name: elementor-animation-wobble-vertical;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1
+}
+
+
+.responsive-area.client-map {
+  position: relative;
+  background: url(//www.conectaturismo.com/cdn/images/bg-clientes-conectaturismo.svg) 50% 50% no-repeat;
+  background-size: cover;
+}
+
+.responsive-area.client-map:before {
+  content: "";
+  display: block;
+  padding-top: 65%;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  background: #38b5e6;
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.client-map .pin.ar {
+  top: 90%;
+  left: 26%;
+}
+
+.client-map .pin.ch {
+  top: 46%;
+  left: 80%;
+}
+
+.client-map .pin.cl {
+  top: 82%;
+  left: 24%;
+}
+
+.client-map .pin.cr {
+  top: 59.8%;
+  left: 18.2%;
+}
+
+.client-map .pin.de {
+  top: 36%;
+  left: 49.8%;
+}
+
+.client-map .pin.ec {
+  top: 67%;
+  left: 20%;
+}
+
+.client-map .pin.eg {
+  top: 50.2%;
+  left: 56.5%;
+}
+
+.client-map .pin.es {
+  top: 43%;
+  left: 46%;
+}
+
+.client-map .pin.eu {
+  top: 38%;
+  left: 14%;
+}
+
+.client-map .pin.ho {
+  top: 56.2%;
+  left: 18.5%;
+}
+
+.client-map .pin.ma {
+  top: 47.5%;
+  left: 45%;
+}
+
+.client-map .pin.mx {
+  top: 53%;
+  left: 13.6%;
+}
+
+.client-map .pin.pe {
+  top: 72.5%;
+  left: 21.9%;
+}
+
+.client-map .pin.pt {
+  top: 43.5%;
+  left: 44%;
+}
+
+.client-map .pin.rd {
+  top: 55%;
+  left: 24.5%;
+}
+
+.client-map .bubble {
+  z-index: 2;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  display: none;
+  transition: all 0.15s;
+}
+
+
+@keyframes expandir-izquierda-derecha {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* Estilo de la imagen con animación */
+.imagen-expandible {
+  display: block;
+  width: auto;
+  height: auto;
+  transform-origin: left;
+  animation: expandir-izquierda-derecha 0.5s ease-out forwards;
+}
+
+.divider-pattern {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid meet' overflow='visible' height='100%' viewBox='0 0 120 26' fill='black' stroke='none'%3E%3Cpath d='M54,1.6V26h-9V2.5L54,1.6z M69,1.6v23.3L60,26V1.6H69z M24,1.6v23.5l-9-0.6V1.6H24z M30,0l9,0.7v24.5h-9V0z M9,2.5v22H0V3.7L9,2.5z M75,1.6l9,0.9v22h-9V1.6z M99,2.7v21.7h-9V3.8L99,2.7z M114,3.8v20.7l-9-0.5V3.8L114,3.8z'/%3E%3C/svg%3E") repeat;
+  background-size: auto;
+  opacity: 0.3;
+}
+
+.footer-a {
+  min-height: 224px;
+  padding-bottom: 130px;
+  padding-top: 130px;
+  background: url(https://www.conectaturismo.com/cdn/images/bg-stripe-dark.png) no-repeat 0 50%;
+}
+
+.footer-gradient {
+  background-image: linear-gradient(385deg, rgb(56, 181, 230) 0%, rgb(79, 197, 213) 98%);
+  min-height: 60px;
+}
+
+.button-contact {
+  padding: 7px 20px 8px;
+  font-size: 0.85em;
+  color: white;
+  font-family: var(--font-montserrat);
+  font-weight: 600 !important;
+  background: repeating-linear-gradient(-45deg, #47bfda, #47bfda 1px, #35e7f5 1px, #35e7f5 2px);
+}
+
+.button-contact:hover {
+  text-decoration-line: none;
+  background: var(--cnt-link-hover) !important;
+}
+
+.site-footer {
+  font-size: .9em;
+  color: #fff;
+  background: #061923 url(https://www.conectaturismo.com/cdn/images/esfera.svg) no-repeat;
+  background-size: 70% auto;
+  background-position: 50% 50%;
+}
+
+.site-footer-primary-section-2 {
+  min-width: 125px;
+  min-height: 175px;
+  background: url(https://www.conectaturismo.com/cdn/images/sello-empresa-innovadora.png) no-repeat 0 50%;
+}
