@@ -13,6 +13,13 @@ const titillium_web = Titillium_Web({
   weight: "300",
 });
 
+export const metadata = {
+  title: 'Conectaturismo',
+  icons: {
+    icon: '/favicon.png',
+  },
+};
+
 
 export default function RootLayout({
   children,
