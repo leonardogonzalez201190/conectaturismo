@@ -20,11 +20,9 @@ import FloatButton from "@/components/ui/float-button";
 export default function Home() {
 
   return (
-    <div className="min-h-screen flex-1 pt-[71px]">
-      <header>
-        <SectionHeader />
-        <CarouselDemo />
-      </header>
+    <div className="min-h-screen flex-1">
+      <SectionHeader />
+      <CarouselDemo />
       <main>
         <FloatButton />
         <div className="max-w-[85rem] mx-auto">

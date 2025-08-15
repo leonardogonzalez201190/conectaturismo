@@ -34,7 +34,7 @@ export default function SectionHeader() {
         { label: "Sistema de gestión para grupos" },
     ]
 
-    return <header className="px-1.5 pr-2 fixed z-50 top-0 left-0 right-0 bg-cnt-primary h-[71px] text-primary-foreground w-full flex items-center justify-between shadow-cnt-header">
+    return <header className="px-1.5 pr-2 sticky z-50 top-0 left-0 right-0 bg-cnt-primary h-[71px] text-primary-foreground w-full flex items-center justify-between shadow-cnt-header">
         <a href="https://www.conectaturismo.com/">
             <Image src="/logo.svg" alt="Logo" width={200} height={80} />
         </a>
